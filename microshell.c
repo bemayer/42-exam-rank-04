@@ -56,7 +56,7 @@ int main(int ac, char **av, char **ep)
 			i++;
 		if (!strcmp(*av, "cd"))
 			r = c(av, i);
-		else if (strcmp(*av, "|") && strcmp(*av, ";"))
+		else if (i)
 			r = x(av, ep, i);
 	}
 	return ((dup2(0, tmp) == -1) && p("error: fatal\n")) | r;
